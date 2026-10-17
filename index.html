@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173d32">
+  <meta name="description" content="Search wine and beverage brands and their alcohol percentages, with offline access.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Wine Finder</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">WF</div>
+      <div class="brand-copy"><h1>Wine Finder</h1><p>Your alcohol reference guide</p></div>
+      <span id="connectionBadge" class="status-pill">Starting…</span>
+    </header>
+
+    <section class="intro" aria-labelledby="introTitle">
+      <p class="eyebrow">YOUR BRAND DIRECTORY</p>
+      <h2 id="introTitle">Find a brand.<br><span>Know the percentage.</span></h2>
+      <p class="intro-note">Search the list or filter by category. Your last successful data sync is saved on this device for offline use.</p>
+    </section>
+
+    <section class="controls" aria-label="Brand search and filters">
+      <label class="searchbox"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search brand names…" autocomplete="off" aria-label="Search brand names"></label>
+      <label class="filter-label" for="categorySelect">CATEGORY</label>
+      <select id="categorySelect" aria-label="Filter by category"><option value="all">All categories</option></select>
+    </section>
+
+    <section class="results-heading"><div><p class="eyebrow">DIRECTORY</p><h2>Brands <span id="resultCount" class="count">0</span></h2></div><button id="refreshButton" class="refresh-button" type="button"><span aria-hidden="true">↻</span> Refresh data</button></section>
+    <p id="statusMessage" class="status-message" role="status">Loading saved data…</p>
+    <section id="brandList" class="brand-list" aria-live="polite"></section>
+    <section id="emptyState" class="empty-state" hidden><div class="empty-icon">⌕</div><h3>No matching brands</h3><p>Try another name or select a different category.</p></section>
+
+    <footer class="footer"><span id="lastUpdated">Data not synced yet</span><span>Alcohol percentages are shown as supplied in your sheet.</span></footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>

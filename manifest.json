@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "Wine Finder — Alcohol Reference",
+  "short_name": "Wine Finder",
+  "description": "Search brand alcohol percentages with offline access.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f5ef",
+  "theme_color": "#173d32",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
